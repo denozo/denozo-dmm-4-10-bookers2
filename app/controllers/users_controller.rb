@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
+
+
+  def index
+  end
   
   def show
-    @user = User.find(params[:id])
     @book = Book.new
+    @user = User.find(params[:id])
   end
   
   def edit
@@ -22,3 +26,7 @@ class UsersController < ApplicationController
   end
   
 end
+
+
+  # before_action :authenticate_user!
+  #   @user = current_user.id
