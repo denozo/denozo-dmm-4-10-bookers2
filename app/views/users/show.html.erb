@@ -1,15 +1,19 @@
-<h2>User info</h2>
+<div<%= render 'users/info' %>
 
-<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class:"mt-3 rounded-circle"; %>
-
-<table class="table">
-  <tr></tr>
-  <tr>
-    <th>name</th>
-    <th><%= @user.name %></th>
-  </tr>
-  <tr>
-    <th>introduction</th>
-    <th><%= @user.introduction %></th>
-  </tr>
-</table>
+<h2></h2>
+    <table>
+      <thead>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+        <tr>
+          <td></td>
+          <td><%= link_to book.title, user_book_path(book.id), class: 'show' %></td>
+          <td><%= book.body %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

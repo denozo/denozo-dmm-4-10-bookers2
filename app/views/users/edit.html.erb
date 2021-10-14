@@ -1,12 +1,26 @@
-<h2>User info</h2>
-
-<%= form_with model:@user, local:true do |f| %>
-  <label for="user_name">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"user_name", plaxeholder:"名前" %>
-  <label for="user_image">Image</label>
-  <%= f.attachment_field :profile_image, autofocus: true, id:"user_image" %>
-  <label for="user_introduction">Introduction</label>
-  <%= f.text_field :introduction, autofocus: true, id:"user_introduction", plaxeholder:"説明文を入力してください。" %>
-
-  <%= f.submit 'Update Book' %>
-<% end %>
+<header>
+  
+</header>
+<body>
+  <h2>User info</h2>
+  
+  <div class="container">
+    <%= form_with model:@user, local:true do |f| %>
+      <div class="form-group">
+        <label for="user_name">Name</label>
+        <%= f.text_field :name, autofocus: true, id:"user_name", plaxeholder:"名前" %>
+      </div>
+      <div class="form-group">
+        <label for="user_image">Image</label>
+        <%= f.attachment_field :profile_image, autofocus: true, id:"user_image" %>
+      </div>
+      <div class="form-group">
+        <label for="user_introduction">Introduction</label>
+        <%= f.text_field :introduction, autofocus: true, id:"user_introduction", plaxeholder:"説明文を入力してください。" %>
+      </div>
+      <div class="form-group">
+      <%= f.submit 'Update Book' %>
+      </div>
+    <% end %>
+  </div>
+</body>
