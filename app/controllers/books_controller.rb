@@ -12,13 +12,13 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     @book.save
-    redirect_to book_path(@book)
+    redirect_to user_path(current_user.id)
   end
-  
-    def show
-      @user = User.find(params[:id])
-      @book = Book.find(params[:id])
-    end
+
+  def show
+    @books = @user.book.page(params[:page]).reverse_order
+  end
+
 
   def edit
     @book = Book.find(params[:id])
@@ -28,7 +28,8 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:notice] = 'Book was successfully updated.'
-      redirect_to book_path(@book)
+      redirect_to user_path(current_user.id)
+      # (current_user.idでログインユーザー情報！
     else
       render :edit
     end

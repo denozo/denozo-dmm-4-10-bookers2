@@ -2,7 +2,7 @@
 
 <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
 
-<table class="table">
+<table class="table table-striped">
   <tr></tr>
   <tr>
     <th>name</th>
@@ -18,9 +18,7 @@
   <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
 <% end %>
 
-
 <h2>New book</h2>
-
 <%= form_with model: book, url:"/books", class: "new_book", local:true do |f| %>
   <div class="field">
     <label for="book_title">Title</label>

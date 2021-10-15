@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody> <!-- データを入れるテーブル-->
-          <% @users.each do |user| %>
+        <% @users.each do |user| %>
         <tr>
           <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
           <td><%= user.name %></td>
