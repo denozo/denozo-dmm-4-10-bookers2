@@ -12,11 +12,12 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     @book.save
-    redirect_to user_path(current_user.id)
+    redirect_to book_path(@book)
   end
 
   def show
-    @books = @user.book.page(params[:page]).reverse_order
+    @books = Book.all
+    # @books = @user.book.page(params[:page]).reverse_order
   end
 
 
@@ -28,8 +29,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:notice] = 'Book was successfully updated.'
-      redirect_to user_path(current_user.id)
-      # (current_user.idでログインユーザー情報！
+      redirect_to user_path(current_user.id)# (current_user.idでログインユーザー情報！
     else
       render :edit
     end

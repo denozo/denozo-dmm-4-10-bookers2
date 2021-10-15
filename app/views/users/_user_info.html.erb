@@ -2,7 +2,7 @@
 
 <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
 
-<table class="table table-striped">
+<table class="table">
   <tr></tr>
   <tr>
     <th>name</th>
@@ -15,22 +15,24 @@
 </table>
 
 <% if user.id == current_user.id %>
-  <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+  <p><%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %></p>
 <% end %>
 
 <h2>New book</h2>
+
 <%= form_with model: book, url:"/books", class: "new_book", local:true do |f| %>
-  <div class="field">
+  <div class="form-group">
     <label for="book_title">Title</label>
-    <%= f.text_field :title, class: 'book_title' %>
+    <%= f.text_field :title, class: 'form-control book_title' %>
   </div>
       
-  <div class="field">
-    <label for="book_body">Body</label>
-    <%= f.text_area :body, class: 'book_body' %>
+  <div class="form-group">
+    <label for="book_opinion">Body</label>
+    <%= f.text_area :body, class: 'form-control book_opinion' %>
   </div>
-      
-  <div class="actions">
-    <%= f.submit 'Create Book' %>
+  
+  <div class="form-group">    
+  <%= f.submit 'Create Book', class: "btn btn-secondary btn-lg btn-block" %>
   </div>
+  
 <% end %>
