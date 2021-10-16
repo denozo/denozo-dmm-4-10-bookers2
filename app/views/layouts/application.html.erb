@@ -11,7 +11,7 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
     
-<header class="shadow-sm" style="background-color: #68666C;">
+<header class="shadow-sm" style="background-color: #343a40;">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand p-3" href="/"><%= link_to "Bookers", root_path %></a>
@@ -22,29 +22,29 @@
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: 'fas fa-home nav-item nav-link text-dark' %>
+            <%= link_to "Home", root_path, class: 'fas fa-home nav-item nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Users", users_path, class: 'fas fa-users nav-link text-dark' %>
+            <%= link_to "Users", users_path, class: 'fas fa-users nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Books", books_path,class: 'fas fa-book-open nav-link text-dark'  %>
+            <%= link_to "Books", books_path,class: 'fas fa-book-open nav-link'  %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-dark' %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link' %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: 'fas fa-home nav-link text-dark' %>
+            <%= link_to "Home", root_path, class: 'fas fa-home nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "About", about_path, class: 'fas fa-link nav-link text-dark' %>
+            <%= link_to "About", about_path, class: 'fas fa-link nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: 'fas fa-user-plus nav-link text-dark' %>
+            <%= link_to "Sign up", new_user_registration_path, class: 'fas fa-user-plus nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-dark' %>
+            <%= link_to "Log in", new_user_session_path, class: 'fas fa-sign-in-alt nav-link' %>
           </li>
         <% end %>
         </ul>
