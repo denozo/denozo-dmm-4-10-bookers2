@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+    
 <header class="shadow-sm" style="background-color: #68666C;">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
@@ -51,7 +51,9 @@
     </div>
   </nav>
 </header>    
-    
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>    
     
     <%= yield %>
 </html>
