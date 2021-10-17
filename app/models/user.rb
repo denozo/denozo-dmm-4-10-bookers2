@@ -10,7 +10,8 @@ class User < ApplicationRecord
   
   validates :name, presence: true
   validates :name, uniqueness: true
+  validates :name, length: { minimum: 2, maximum: 20}
+  validates :introduction, length: { maximum: 50}
   validates :email, length: { maximum: 50}
 
- #2行に一意制と文字数制限, uniquness:true, uniquness:true
 end
