@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @book = Book.new
     @user = User.find(params[:id])
-    @books = @user.book.page(params[:page]).reverse_order
+    @books = @user.books.page(params[:page]).reverse_order
   end
 
   
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user == current_user
       render "edit"
     else
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     end
   end
   

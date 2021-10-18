@@ -31,7 +31,7 @@ class BooksController < ApplicationController
     if @user == current_user
       render "edit"
     else
-      redirect_to root_path
+      redirect_to books_path
     end
   end
   
